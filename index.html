@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livv Studio | Strategic Proposal — Savoury Protein Bar</title>
+  <meta name="description" content="A strategic proposal for launching and scaling a savoury protein bar e-commerce brand on Shopify, with AI-powered customer experience and automated marketing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #F8F7F3;
+      --bg-alt: #F0EFEB;
+      --primary: #2C0405;
+      --primary-light: #3D1112;
+      --accent: #822B2E;
+      --accent-soft: #A34447;
+      --muted: #8F8484;
+      --muted-light: #B5ABAB;
+      --border: rgba(44, 4, 5, 0.08);
+      --border-strong: rgba(44, 4, 5, 0.15);
+      --card-bg: #2C0405;
+      --card-text: #F8F7F3;
+      --card-muted: rgba(248, 247, 243, 0.55);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+      --radius-xl: 40px;
+      --grid-size: 48px;
+      --max-width: 1200px;
+      --section-padding: 120px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== GRID BACKGROUND ===== */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(44, 4, 5, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(44, 4, 5, 0.03) 1px, transparent 1px);
+      background-size: var(--grid-size) var(--grid-size);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      padding: var(--section-padding) 0;
+      position: relative;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .section-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* ===== METADATA LABELS ===== */
+    .meta-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid var(--border-strong);
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+
+    .meta-label--dark {
+      color: var(--card-muted);
+      border-color: rgba(248, 247, 243, 0.15);
+    }
+
+    .meta-labels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+    .fade-in-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 160px 0 120px;
+      position: relative;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero .section-number {
+      margin-bottom: 32px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      margin-bottom: 32px;
+      max-width: 900px;
+    }
+
+    .hero-title .highlight {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 650px;
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 80px;
+    }
+
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.5); }
+    }
+
+    /* Hero decorative element */
+    .hero-graphic {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 500px;
+      height: 500px;
+      opacity: 0.06;
+      z-index: 1;
+    }
+
+    .hero-graphic svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ===== TRUSTED BY ===== */
+    .trusted-bar {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trusted-bar .container {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .trusted-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted-light);
+      white-space: nowrap;
+    }
+
+    .trusted-logos {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      overflow: hidden;
+    }
+
+    .trusted-logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--muted-light);
+      white-space: nowrap;
+      opacity: 0.5;
+    }
+
+    /* ===== DARK CARD SECTIONS ===== */
+    .dark-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      padding: 64px;
+      color: var(--card-text);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dark-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(130, 43, 46, 0.15), transparent 60%);
+      pointer-events: none;
+    }
+
+    .dark-card .section-number {
+      color: var(--card-muted);
+    }
+
+    .dark-card .section-subtitle {
+      color: var(--card-muted);
+    }
+
+    .dark-card-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      margin-bottom: 24px;
+    }
+
+    .dark-card-status .line {
+      width: 32px;
+      height: 1px;
+      background: var(--accent-soft);
+    }
+
+    .dark-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 48px;
+    }
+
+    .dark-card-item {
+      padding: 32px;
+      border: 1px solid rgba(248, 247, 243, 0.08);
+      border-radius: var(--radius-md);
+      transition: border-color 0.3s;
+    }
+
+    .dark-card-item:hover {
+      border-color: rgba(248, 247, 243, 0.2);
+    }
+
+    .dark-card-item h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .dark-card-item p {
+      font-size: 0.88rem;
+      color: var(--card-muted);
+      line-height: 1.7;
+    }
+
+    /* ===== IMAGE CAROUSEL ===== */
+    .carousel-section {
+      padding: 80px 0;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      animation: scroll-left 30s linear infinite;
+      width: max-content;
+    }
+
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .carousel-card {
+      flex-shrink: 0;
+      width: 320px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      background: var(--primary);
+    }
+
+    .carousel-card img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .carousel-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .carousel-card-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px;
+      background: linear-gradient(transparent, rgba(44, 4, 5, 0.85));
+    }
+
+    .carousel-card-label h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .carousel-card-label span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ===== OBJECTIVES CARDS ===== */
+    .objectives-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .objective-card {
+      padding: 40px 32px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .objective-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .objective-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(44, 4, 5, 0.08);
+    }
+
+    .objective-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .objective-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .objective-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--card-text);
+    }
+
+    .objective-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .objective-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ===== SCOPE OF WORK ===== */
+    .scope-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 56px;
+    }
+
+    .scope-column {
+      padding: 40px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .scope-column h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    .scope-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--primary);
+      line-height: 1.5;
+    }
+
+    .scope-item:last-child {
+      border-bottom: none;
+    }
+
+    .scope-item .slash {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    /* ===== ROADMAP / TIMELINE ===== */
+    .roadmap {
+      margin-top: 56px;
+      position: relative;
+    }
+
+    .roadmap-line {
+      position: absolute;
+      left: 24px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--border-strong);
+    }
+
+    .roadmap-step {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 48px;
+      position: relative;
+      padding-left: 72px;
+    }
+
+    .roadmap-step:last-child {
+      margin-bottom: 0;
+    }
+
+    .roadmap-dot {
+      position: absolute;
+      left: 12px;
+      top: 4px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .roadmap-dot span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .roadmap-content h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .roadmap-content p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ===== COMMUNICATION ===== */
+    .comm-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .comm-card {
+      padding: 32px 28px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.3);
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .comm-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    .comm-card .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .comm-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ===== ESCROW / RISK FREE ===== */
+    .escrow-card {
+      background: linear-gradient(135deg, var(--card-bg), #3D1112);
+      border-radius: var(--radius-xl);
+      padding: 80px 64px;
+      color: var(--card-text);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .escrow-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(130, 43, 46, 0.2), transparent 60%);
+      pointer-events: none;
+    }
+
+    .escrow-card .section-title {
+      color: var(--card-text);
+      position: relative;
+      z-index: 1;
+    }
+
+    .escrow-card .section-subtitle {
+      color: var(--card-muted);
+      margin: 0 auto 40px;
+      max-width: 700px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .escrow-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      border: 1px solid rgba(163, 68, 71, 0.4);
+      border-radius: 100px;
+      padding: 12px 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== INVESTMENT ===== */
+    .investment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .invest-card {
+      padding: 40px 32px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.4);
+      position: relative;
+    }
+
+    .invest-card .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .invest-card .value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .invest-card .detail {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .invest-card ul {
+      list-style: none;
+    }
+
+    .invest-card ul li {
+      font-size: 0.88rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--primary);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .invest-card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .invest-card ul li .check {
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ===== ADD-ONS ===== */
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .addon-card {
+      padding: 40px 32px;
+      border: 1px dashed var(--border-strong);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s;
+    }
+
+    .addon-card:hover {
+      border-style: solid;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .addon-card .addon-icon {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .addon-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .addon-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ===== CASE STUDIES ===== */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .case-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-strong);
+      background: #fff;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 64px rgba(44, 4, 5, 0.1);
+    }
+
+    .case-card-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-card-body {
+      padding: 28px 32px 32px;
+    }
+
+    .case-card-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .case-card-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .case-card-body p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .case-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 16px;
+      transition: gap 0.3s;
+    }
+
+    .case-card-link:hover {
+      gap: 12px;
+    }
+
+    /* ===== CTA FOOTER ===== */
+    .cta-section {
+      padding: 160px 0 80px;
+      text-align: center;
+    }
+
+    .cta-title {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 32px;
+    }
+
+    .cta-text {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+
+    .cta-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 16px 36px;
+      border: 2px solid var(--accent);
+      border-radius: 100px;
+      transition: all 0.3s;
+    }
+
+    .cta-email:hover {
+      background: var(--accent);
+      color: var(--card-text);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .footer-links a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* ===== DIVIDER ===== */
+    .section-divider {
+      border: none;
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .objectives-grid,
+      .investment-grid,
+      .addons-grid,
+      .comm-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --section-padding: 80px;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .dark-card {
+        padding: 40px 28px;
+      }
+
+      .dark-card-grid,
+      .scope-grid,
+      .cases-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .objectives-grid,
+      .investment-grid,
+      .addons-grid,
+      .comm-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 120px 0 80px;
+      }
+
+      .carousel-card {
+        width: 260px;
+      }
+
+      .carousel-card img {
+        height: 320px;
+      }
+
+      .escrow-card {
+        padding: 56px 28px;
+      }
+
+      .trusted-bar .container {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
+    /* ===== PAGE LOADING ===== */
+    .page-loader {
+      position: fixed;
+      inset: 0;
+      background: var(--primary);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s, visibility 0.6s;
+    }
+
+    .page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--card-muted);
+      animation: loader-blink 1.5s ease-in-out infinite;
+    }
+
+    @keyframes loader-blink {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* ===== MISC ===== */
+    .accent-line {
+      width: 48px;
+      height: 2px;
+      background: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--card-text);
+      background: var(--accent);
+      padding: 6px 16px;
+      border-radius: 100px;
+    }
+
+    .notion-bar {
+      margin-top: 48px;
+      padding: 24px 32px;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .notion-bar .icon {
+      font-size: 1.2rem;
+    }
+
+    .notion-bar p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .notion-bar strong {
+      color: var(--primary);
+    }
+
+    /* Accelerated delivery pill */
+    .delivery-section {
+      margin-top: 48px;
+      padding: 32px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(130, 43, 46, 0.05), rgba(255,255,255,0.4));
+      text-align: center;
+    }
+
+    .delivery-section h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .delivery-section p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Page Loader -->
+<div class="page-loader" id="pageLoader">
+  <span class="loader-text">Loading Proposal...</span>
+</div>
+
+<!-- ====================== HERO ====================== -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-content fade-in">
+      <div class="meta-labels">
+        <span class="meta-label">[ FOR: ZACH EHRLICH ]</span>
+        <span class="meta-label">[ TOPIC: SHOPIFY DEVELOPMENT ]</span>
+        <span class="meta-label">[ BY: LIVV STUDIO ]</span>
+        <span class="meta-label">[ DATE: APRIL 2026 ]</span>
+      </div>
+
+      <h1 class="hero-title">
+        Building Your<br>
+        <span class="highlight">Savoury Protein Bar</span><br>
+        Empire Online.
+      </h1>
+
+      <p class="hero-description">
+        A strategic proposal to launch and scale your savoury protein bar brand on Shopify. 
+        Not a generic pitch — this is the blueprint for transforming your concept into a 
+        high-converting e-commerce machine, powered by AI and automation.
+      </p>
+
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Trusted by Industry Leaders
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative Background Element -->
+  <div class="hero-graphic">
+    <svg viewBox="0 0 500 500" fill="none">
+      <circle cx="250" cy="250" r="200" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="250" cy="250" r="150" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+      <circle cx="250" cy="250" r="100" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="250" cy="250" r="50" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+      <line x1="50" y1="250" x2="450" y2="250" stroke="currentColor" stroke-width="0.3" opacity="0.2"/>
+      <line x1="250" y1="50" x2="250" y2="450" stroke="currentColor" stroke-width="0.3" opacity="0.2"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ====================== TRUSTED BY ====================== -->
+<div class="trusted-bar">
+  <div class="container">
+    <span class="trusted-label">Trusted by Industry Leaders</span>
+    <div class="trusted-logos">
+      <span class="trusted-logo">DRINK MEDLY</span>
+      <span class="trusted-logo">BOCA DE AGUA</span>
+      <span class="trusted-logo">WORTISE</span>
+      <span class="trusted-logo">CASITA CRAFTERS</span>
+      <span class="trusted-logo">KRUFOOD</span>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== MARKET POSITIONING ====================== -->
+<section id="market-positioning">
+  <div class="container">
+    <div class="dark-card fade-in">
+      <div class="section-number">01 // MARKET_POSITIONING</div>
+      <div class="dark-card-status">
+        <span class="line"></span>
+        STATUS: MARKET READY
+      </div>
+      <h2 class="section-title" style="color: var(--card-text); max-width: 700px;">
+        The savoury protein bar category is where real disruption happens.
+      </h2>
+      <p class="section-subtitle" style="margin-top: 16px;">
+        Sweet protein bars dominate the market — but consumers are craving savoury. 
+        Your brand has the opportunity to own an emerging category before the incumbents catch on.
+      </p>
+
+      <div class="dark-card-grid">
+        <div class="dark-card-item fade-in fade-in-delay-1">
+          <h4>Current Opportunity</h4>
+          <p>The savoury snack bar segment is growing rapidly as health-conscious consumers look beyond sugar-laden alternatives. First-mover advantage is critical.</p>
+        </div>
+        <div class="dark-card-item fade-in fade-in-delay-2">
+          <h4>Digital Strategy</h4>
+          <p>A conversion-optimized Shopify store with AI-powered customer engagement and automated email flows to build a loyal subscriber base from day one.</p>
+        </div>
+        <div class="dark-card-item fade-in fade-in-delay-3">
+          <h4>Brand Consistency</h4>
+          <p>Total alignment of UX, visual narrative, and product messaging at every digital touchpoint — from landing page to checkout to post-purchase email.</p>
+        </div>
+        <div class="dark-card-item fade-in fade-in-delay-4">
+          <h4>Growth Capacity</h4>
+          <p>Building infrastructure that scales with your brand — from a DTC launch to wholesale, subscriptions, and retail expansion.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== IMAGE PROTOTYPES ====================== -->
+<section class="carousel-section" id="image-prototypes">
+  <div class="container" style="margin-bottom: 40px;">
+    <div class="section-number fade-in">02 // IMAGE_PROTOTYPES</div>
+    <h2 class="section-title fade-in">Visual Direction</h2>
+    <p class="section-subtitle fade-in">Concept imagery for your product photography. Every shot tells a story of craftsmanship and real ingredients.</p>
+  </div>
+
+  <div class="carousel-track" id="carouselTrack">
+    <!-- Set 1 -->
+    <div class="carousel-card">
+      <img src="images/hero.png" alt="Studio context product photography">
+      <div class="carousel-card-label">
+        <h4>Studio Context</h4>
+        <span>Warmth / Artisanal</span>
+      </div>
+    </div>
+    <div class="carousel-card">
+      <img src="images/clean.png" alt="Clean isolated product shot">
+      <div class="carousel-card-label">
+        <h4>Product Focus</h4>
+        <span>Isolated / Clean</span>
+      </div>
+    </div>
+    <div class="carousel-card">
+      <img src="images/dramatic.png" alt="Dramatic shadow play photography">
+      <div class="carousel-card-label">
+        <h4>Shadow Play</h4>
+        <span>Dramatic / Premium</span>
+      </div>
+    </div>
+    <div class="carousel-card">
+      <img src="images/lifestyle.png" alt="Lifestyle product photography">
+      <div class="carousel-card-label">
+        <h4>Lifestyle Context</h4>
+        <span>Natural / Relatable</span>
+      </div>
+    </div>
+    <div class="carousel-card">
+      <img src="images/ingredients.png" alt="Ingredients flat lay">
+      <div class="carousel-card-label">
+        <h4>Ingredients Reveal</h4>
+        <span>Transparent / Honest</span>
+      </div>
+    </div>
+    <!-- Set 2 (duplicate for infinite scroll) -->
+    <div class="carousel-card">
+      <img src="images/hero.png" alt="Studio context product photography">
+      <div class="carousel-card-label">
+        <h4>Studio Context</h4>
+        <span>Warmth / Artisanal</span>
+      </div>
+    </div>
+    <div class="carousel-card">
+      <img src="images/clean.png" alt="Clean isolated product shot">
+      <div class="carousel-card-label">
+        <h4>Product Focus</h4>
+        <span>Isolated / Clean</span>
+      </div>
+    </div>
+    <div class="carousel-card">
+      <img src="images/dramatic.png" alt="Dramatic shadow play photography">
+      <div class="carousel-card-label">
+        <h4>Shadow Play</h4>
+        <span>Dramatic / Premium</span>
+      </div>
+    </div>
+    <div class="carousel-card">
+      <img src="images/lifestyle.png" alt="Lifestyle product photography">
+      <div class="carousel-card-label">
+        <h4>Lifestyle Context</h4>
+        <span>Natural / Relatable</span>
+      </div>
+    </div>
+    <div class="carousel-card">
+      <img src="images/ingredients.png" alt="Ingredients flat lay">
+      <div class="carousel-card-label">
+        <h4>Ingredients Reveal</h4>
+        <span>Transparent / Honest</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== STRATEGIC OBJECTIVES ====================== -->
+<section id="objectives">
+  <div class="container">
+    <div class="section-number fade-in">03 // STRATEGIC_OBJECTIVES</div>
+    <h2 class="section-title fade-in">Three Pillars of<br>Your Digital Launch</h2>
+
+    <div class="objectives-grid">
+      <div class="objective-card fade-in fade-in-delay-1">
+        <div class="objective-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <h3>Scalable Shopify Store</h3>
+        <p>A high-performance Shopify storefront designed for conversion, with custom product pages, optimized checkout flow, and a brand experience that turns visitors into subscribers.</p>
+      </div>
+
+      <div class="objective-card fade-in fade-in-delay-2">
+        <div class="objective-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3>AI-Powered Experience</h3>
+        <p>A custom AI bot trained on your product data to handle customer inquiries 24/7, follow up based on user behavior and journey, and drive conversions through intelligent engagement.</p>
+      </div>
+
+      <div class="objective-card fade-in fade-in-delay-3">
+        <div class="objective-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <h3>Automated Email Flows</h3>
+        <p>Strategic email automation — welcome sequences, abandoned cart recovery, post-purchase nurturing, and re-engagement campaigns that generate recurring revenue on autopilot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ====================== SCOPE OF WORK ====================== -->
+<section id="scope">
+  <div class="container">
+    <div class="section-number fade-in">04 // SCOPE_OF_WORK</div>
+    <h2 class="section-title fade-in">Full-Stack Delivery</h2>
+    <p class="section-subtitle fade-in">Everything you need to launch strong and grow fast, covered in one engagement.</p>
+
+    <div class="scope-grid">
+      <div class="scope-column fade-in fade-in-delay-1">
+        <h3>Strategy & UX</h3>
+        <div class="scope-item">
+          <span class="slash">/</span> Digital Brand Architecture Audit
+        </div>
+        <div class="scope-item">
+          <span class="slash">/</span> User Flow Mapping (Shopify Optimization)
+        </div>
+        <div class="scope-item">
+          <span class="slash">/</span> High-Fidelity Interface Design (Premium)
+        </div>
+        <div class="scope-item">
+          <span class="slash">/</span> Product Page UX & Conversion Strategy
+        </div>
+        <div class="scope-item">
+          <span class="slash">/</span> Mobile-First Responsive Design
+        </div>
+      </div>
+
+      <div class="scope-column fade-in fade-in-delay-2">
+        <h3>Development & Systems</h3>
+        <div class="scope-item">
+          <span class="slash">/</span> Custom Shopify Theme Development
+        </div>
+        <div class="scope-item">
+          <span class="slash">/</span> AI Bot Integration & Training
+        </div>
+        <div class="scope-item">
+          <span class="slash">/</span> Email Automation Setup (Klaviyo / Mailchimp)
+        </div>
+        <div class="scope-item">
+          <span class="slash">/</span> Analytics & Behavior Tracking
+        </div>
+        <div class="scope-item">
+          <span class="slash">/</span> Payment & Checkout Optimization
+        </div>
+      </div>
+    </div>
+
+    <div class="notion-bar fade-in">
+      <span class="icon">📋</span>
+      <p>Everything is documented in <strong>Notion</strong>. You have full visibility, 24/7.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ROADMAP ====================== -->
+<section id="roadmap">
+  <div class="container">
+    <div class="section-number fade-in">05 // EXECUTION_ROADMAP</div>
+    <h2 class="section-title fade-in">How We Get There</h2>
+    <p class="section-subtitle fade-in">A sprint-based approach designed for speed and precision.</p>
+
+    <div class="roadmap">
+      <div class="roadmap-line"></div>
+
+      <div class="roadmap-step fade-in fade-in-delay-1">
+        <div class="roadmap-dot"><span>01</span></div>
+        <div class="roadmap-content">
+          <h4>Radical Alignment & Setup</h4>
+          <p>Deep discovery session with you. We map the brand DNA, set up the Notion Project Dashboard, and align on visual direction & product positioning.</p>
+        </div>
+      </div>
+
+      <div class="roadmap-step fade-in fade-in-delay-2">
+        <div class="roadmap-dot"><span>02</span></div>
+        <div class="roadmap-content">
+          <h4>Visual Architecture</h4>
+          <p>Interactive prototyping of the full store experience. Design validation through weekly updates. Every screen refined until perfect.</p>
+        </div>
+      </div>
+
+      <div class="roadmap-step fade-in fade-in-delay-3">
+        <div class="roadmap-dot"><span>03</span></div>
+        <div class="roadmap-content">
+          <h4>Build & Integration</h4>
+          <p>Shopify theme development, AI bot training and deployment, email automation setup. Stress testing across devices and scenarios.</p>
+        </div>
+      </div>
+
+      <div class="roadmap-step fade-in fade-in-delay-4">
+        <div class="roadmap-dot"><span>04</span></div>
+        <div class="roadmap-content">
+          <h4>Launch & Scale</h4>
+          <p>Strategic go-live with post-launch monitoring. Performance optimization, bug fixes, and analytics review to ensure a strong start.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== COMMUNICATION ====================== -->
+<section id="communication">
+  <div class="container">
+    <div class="section-number fade-in">05.5 // COMMUNICATION</div>
+    <h2 class="section-title fade-in">How We Work Together</h2>
+
+    <div class="comm-grid">
+      <div class="comm-card fade-in fade-in-delay-1">
+        <div class="label">PROJECT</div>
+        <p>Notion for 24/7 visibility & clarity on every milestone, task, and decision.</p>
+      </div>
+      <div class="comm-card fade-in fade-in-delay-2">
+        <div class="label">FEEDBACK</div>
+        <p>Loom + Slack for fast async iteration. No waiting for meetings to move forward.</p>
+      </div>
+      <div class="comm-card fade-in fade-in-delay-3">
+        <div class="label">MEETINGS</div>
+        <p>Weekly Strategic Sprint Alignment. 30 min focused calls to keep momentum high.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ====================== RISK FREE ====================== -->
+<section id="escrow">
+  <div class="container">
+    <div class="escrow-card fade-in">
+      <div class="section-number" style="color: var(--card-muted);">06 // RISK_FREE_EXECUTION</div>
+      <h2 class="section-title" style="max-width: 700px; margin: 0 auto 16px;">
+        Risk-Free Execution<br>via Contra
+      </h2>
+      <p class="section-subtitle">
+        We prioritize your financial security. All payments are handled legally through 
+        Contra's Escrow system. Your funds are held safely in a neutral vault and are 
+        only released when you approve the milestones.
+      </p>
+      <div class="escrow-badge">
+        100% Refundable if Expectations Are Not Met. Zero Risk.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== INVESTMENT ====================== -->
+<section id="investment">
+  <div class="container">
+    <div class="section-number fade-in">06.5 // TOTAL_INVESTMENT</div>
+    <h2 class="section-title fade-in">Total Investment</h2>
+
+    <div class="investment-grid">
+      <div class="invest-card fade-in fade-in-delay-1">
+        <div class="label">Professional Services Included</div>
+        <ul>
+          <li><span class="check">✓</span> Full Shopify Store Design & Build</li>
+          <li><span class="check">✓</span> Custom AI Bot Development & Training</li>
+          <li><span class="check">✓</span> Automated Email Flow Setup</li>
+          <li><span class="check">✓</span> Product Photography Direction</li>
+          <li><span class="check">✓</span> User Journey & Behavior Tracking</li>
+          <li><span class="check">✓</span> Full Page Design & Logic Build</li>
+        </ul>
+      </div>
+
+      <div class="invest-card fade-in fade-in-delay-2">
+        <div class="label">Estimated Timeline</div>
+        <div class="value">1 — 1.5 Months</div>
+        <p class="detail">Dependent on feedback & revisions. Our sprint-based workflow keeps velocity high.</p>
+      </div>
+
+      <div class="invest-card fade-in fade-in-delay-3">
+        <div class="label">Payment Structure</div>
+        <div class="value">3 × $1,500 USD</div>
+        <p class="detail">Released per milestone via Contra. Each milestone clearly defined and approved by you before funds release.</p>
+      </div>
+    </div>
+
+    <div class="delivery-section fade-in">
+      <h3>⚡ Accelerated Delivery</h3>
+      <p>Our sprint-based workflow allows us to deliver the full Scope of Work in approximately 1 — 1.5 months.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ====================== SCALABLE ADD-ONS ====================== -->
+<section id="addons">
+  <div class="container">
+    <div class="section-number fade-in">07 // SCALABLE_ADD-ONS</div>
+    <h2 class="section-title fade-in">Future Growth</h2>
+    <p class="section-subtitle fade-in">When your brand is ready to expand, we're ready to build.</p>
+
+    <div class="addons-grid">
+      <div class="addon-card fade-in fade-in-delay-1">
+        <div class="addon-icon">🤖</div>
+        <h3>Custom AI Agents</h3>
+        <p>Trained on your product data for 24/7 customer support, personalized recommendations, and automated sales conversations.</p>
+      </div>
+      <div class="addon-card fade-in fade-in-delay-2">
+        <div class="addon-icon">📊</div>
+        <h3>Independent CRM</h3>
+        <p>Own your data. Custom pipeline setup for wholesale, B2B partnerships, and retail expansion tracking.</p>
+      </div>
+      <div class="addon-card fade-in fade-in-delay-3">
+        <div class="addon-icon">📧</div>
+        <h3>Advanced Mailing</h3>
+        <p>Sophisticated campaigns for customer loyalty, subscription management, and recurring revenue generation at scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CASE STUDIES ====================== -->
+<section id="cases">
+  <div class="container">
+    <div class="section-number fade-in">08 // RELEVANT_CASES</div>
+    <h2 class="section-title fade-in">Proven Track Record</h2>
+    <p class="section-subtitle fade-in">A selection of projects that demonstrate our capability in e-commerce, branding, and technical excellence.</p>
+
+    <div class="cases-grid">
+      <a href="https://www.drinkmedly.com/" target="_blank" rel="noopener" class="case-card fade-in fade-in-delay-1" style="text-decoration: none; color: inherit;">
+        <div style="height: 260px; background: linear-gradient(135deg, #1a1a2e, #16213e); display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 2rem; font-weight: 800; color: rgba(255,255,255,0.15); letter-spacing: 0.1em;">DRINK MEDLY</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-card-tag">E-COMMERCE • UX</div>
+          <h3>Drink Medly</h3>
+          <p>A clean, mobile-first e-commerce site built around a dynamic bundle/checkout flow and subscription logic, with a minimal, conversion-focused UI.</p>
+          <span class="case-card-link">View Project →</span>
+        </div>
+      </a>
+
+      <a href="https://www.bocadeagua.com/es" target="_blank" rel="noopener" class="case-card fade-in fade-in-delay-2" style="text-decoration: none; color: inherit;">
+        <div style="height: 260px; background: linear-gradient(135deg, #0d3b2e, #1a5c3a); display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 1.6rem; font-weight: 800; color: rgba(255,255,255,0.15); letter-spacing: 0.1em;">BOCA DE AGUA</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-card-tag">BRANDING • HOSPITALITY</div>
+          <h3>Eco Luxury Hotel, Boca De Agua</h3>
+          <p>A sustainable hospitality experience. The design translates the organic philosophy of the brand into a visual digital narrative.</p>
+          <span class="case-card-link">View Project →</span>
+        </div>
+      </a>
+
+      <a href="https://wortise.com/es" target="_blank" rel="noopener" class="case-card fade-in fade-in-delay-3" style="text-decoration: none; color: inherit;">
+        <div style="height: 260px; background: linear-gradient(135deg, #2d1b4e, #4a2d7a); display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 2rem; font-weight: 800; color: rgba(255,255,255,0.15); letter-spacing: 0.1em;">WORTISE</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-card-tag">TECH • DASHBOARD</div>
+          <h3>Wortise</h3>
+          <p>Advanced ad monetization platform. We designed high-density data dashboards that remain intuitive and performant.</p>
+          <span class="case-card-link">View Project →</span>
+        </div>
+      </a>
+
+      <a href="https://www.casitacrafters.com/" target="_blank" rel="noopener" class="case-card fade-in fade-in-delay-4" style="text-decoration: none; color: inherit;">
+        <div style="height: 260px; background: linear-gradient(135deg, #3d2b1f, #5c3d2e); display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 1.6rem; font-weight: 800; color: rgba(255,255,255,0.15); letter-spacing: 0.1em;">CASITA CRAFTERS</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-card-tag">REAL ESTATE • WEB</div>
+          <h3>Casita Crafters</h3>
+          <p>Flexible space for your ever-changing needs. A boutique builder of accessory dwelling units with a responsive, conversion-focused layout.</p>
+          <span class="case-card-link">View Project →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ====================== CTA FOOTER ====================== -->
+<section class="cta-section" id="cta">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-number" style="text-align: center;">READY?</div>
+      <h2 class="cta-title">
+        We are the architects<br>
+        of your <span style="color: var(--accent);">digital future</span>.
+      </h2>
+      <p class="cta-text">
+        Let's make your savoury protein bar brand not only taste good, but work beautifully online. Ready to build something exceptional together.
+      </p>
+      <a href="mailto:hola@livv.systems" class="cta-email">
+        hola@livv.systems →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-links">
+      <a href="mailto:hola@livv.systems">Contact</a>
+      <a href="https://livvvv.com" target="_blank" rel="noopener">Design by LIVV</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ===== Page Loader =====
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('pageLoader').classList.add('hidden');
+    }, 800);
+  });
+
+  // ===== Scroll Animations (IntersectionObserver) =====
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -60px 0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ===== Smooth parallax on hero =====
+  const heroGraphic = document.querySelector('.hero-graphic');
+  if (heroGraphic) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      heroGraphic.style.transform = `translateY(calc(-50% + ${scrollY * 0.15}px)) rotate(${scrollY * 0.02}deg)`;
+    }, { passive: true });
+  }
+</script>
+
+</body>
+</html>
