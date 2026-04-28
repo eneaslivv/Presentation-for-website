@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* ===== RESET & BASE ===== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
@@ -35,10 +34,7 @@
       --section-padding: 120px;
     }
 
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
+    html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
       font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -50,7 +46,6 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* ===== GRID BACKGROUND ===== */
     body::before {
       content: '';
       position: fixed;
@@ -63,7 +58,6 @@
       z-index: 0;
     }
 
-    /* ===== LAYOUT ===== */
     .container {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -72,15 +66,9 @@
       z-index: 1;
     }
 
-    section {
-      padding: var(--section-padding) 0;
-      position: relative;
-    }
+    section { padding: var(--section-padding) 0; position: relative; }
 
-    /* ===== TYPOGRAPHY ===== */
-    .mono {
-      font-family: 'JetBrains Mono', monospace;
-    }
+    .mono { font-family: 'JetBrains Mono', monospace; }
 
     .section-number {
       font-family: 'JetBrains Mono', monospace;
@@ -107,7 +95,6 @@
       line-height: 1.7;
     }
 
-    /* ===== METADATA LABELS ===== */
     .meta-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
@@ -121,11 +108,6 @@
       text-transform: uppercase;
     }
 
-    .meta-label--dark {
-      color: var(--card-muted);
-      border-color: rgba(248, 247, 243, 0.15);
-    }
-
     .meta-labels {
       display: flex;
       flex-wrap: wrap;
@@ -133,18 +115,13 @@
       margin-bottom: 40px;
     }
 
-    /* ===== SCROLL ANIMATIONS ===== */
+    /* Animations */
     .fade-in {
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
     .fade-in-delay-1 { transition-delay: 0.1s; }
     .fade-in-delay-2 { transition-delay: 0.2s; }
     .fade-in-delay-3 { transition-delay: 0.3s; }
@@ -159,14 +136,8 @@
       position: relative;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero .section-number {
-      margin-bottom: 32px;
-    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero .section-number { margin-bottom: 32px; }
 
     .hero-title {
       font-size: clamp(2.8rem, 6vw, 5.5rem);
@@ -177,9 +148,7 @@
       max-width: 900px;
     }
 
-    .hero-title .highlight {
-      color: var(--accent);
-    }
+    .hero-title .highlight { color: var(--accent); }
 
     .hero-description {
       font-size: 1.15rem;
@@ -203,8 +172,7 @@
     }
 
     .hero-badge .dot {
-      width: 6px;
-      height: 6px;
+      width: 6px; height: 6px;
       background: var(--accent);
       border-radius: 50%;
       animation: pulse 2s infinite;
@@ -215,22 +183,16 @@
       50% { opacity: 0.5; transform: scale(1.5); }
     }
 
-    /* Hero decorative element */
     .hero-graphic {
       position: absolute;
       right: -80px;
       top: 50%;
       transform: translateY(-50%);
-      width: 500px;
-      height: 500px;
+      width: 500px; height: 500px;
       opacity: 0.06;
       z-index: 1;
     }
-
-    .hero-graphic svg {
-      width: 100%;
-      height: 100%;
-    }
+    .hero-graphic svg { width: 100%; height: 100%; }
 
     /* ===== TRUSTED BY ===== */
     .trusted-bar {
@@ -238,13 +200,7 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-
-    .trusted-bar .container {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-
+    .trusted-bar .container { display: flex; align-items: center; gap: 40px; }
     .trusted-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.65rem;
@@ -253,14 +209,7 @@
       color: var(--muted-light);
       white-space: nowrap;
     }
-
-    .trusted-logos {
-      display: flex;
-      align-items: center;
-      gap: 48px;
-      overflow: hidden;
-    }
-
+    .trusted-logos { display: flex; align-items: center; gap: 48px; overflow: hidden; }
     .trusted-logo {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 1.1rem;
@@ -270,7 +219,7 @@
       opacity: 0.5;
     }
 
-    /* ===== DARK CARD SECTIONS ===== */
+    /* ===== DARK CARD ===== */
     .dark-card {
       background: var(--card-bg);
       border-radius: var(--radius-xl);
@@ -279,7 +228,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .dark-card::before {
       content: '';
       position: absolute;
@@ -287,14 +235,8 @@
       background: radial-gradient(circle at 80% 20%, rgba(130, 43, 46, 0.15), transparent 60%);
       pointer-events: none;
     }
-
-    .dark-card .section-number {
-      color: var(--card-muted);
-    }
-
-    .dark-card .section-subtitle {
-      color: var(--card-muted);
-    }
+    .dark-card .section-number { color: var(--card-muted); }
+    .dark-card .section-subtitle { color: var(--card-muted); }
 
     .dark-card-status {
       display: inline-flex;
@@ -308,12 +250,7 @@
       color: var(--accent-soft);
       margin-bottom: 24px;
     }
-
-    .dark-card-status .line {
-      width: 32px;
-      height: 1px;
-      background: var(--accent-soft);
-    }
+    .dark-card-status .line { width: 32px; height: 1px; background: var(--accent-soft); }
 
     .dark-card-grid {
       display: grid;
@@ -321,53 +258,29 @@
       gap: 40px;
       margin-top: 48px;
     }
-
     .dark-card-item {
       padding: 32px;
       border: 1px solid rgba(248, 247, 243, 0.08);
       border-radius: var(--radius-md);
       transition: border-color 0.3s;
     }
-
-    .dark-card-item:hover {
-      border-color: rgba(248, 247, 243, 0.2);
-    }
-
-    .dark-card-item h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: -0.01em;
-    }
-
-    .dark-card-item p {
-      font-size: 0.88rem;
-      color: var(--card-muted);
-      line-height: 1.7;
-    }
+    .dark-card-item:hover { border-color: rgba(248, 247, 243, 0.2); }
+    .dark-card-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em; }
+    .dark-card-item p { font-size: 0.88rem; color: var(--card-muted); line-height: 1.7; }
 
     /* ===== IMAGE CAROUSEL ===== */
-    .carousel-section {
-      padding: 80px 0;
-      overflow: hidden;
-    }
-
+    .carousel-section { padding: 80px 0; overflow: hidden; }
     .carousel-track {
       display: flex;
       gap: 24px;
       animation: scroll-left 30s linear infinite;
       width: max-content;
     }
-
-    .carousel-track:hover {
-      animation-play-state: paused;
-    }
-
+    .carousel-track:hover { animation-play-state: paused; }
     @keyframes scroll-left {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-
     .carousel-card {
       flex-shrink: 0;
       width: 320px;
@@ -376,35 +289,20 @@
       position: relative;
       background: var(--primary);
     }
-
     .carousel-card img {
-      width: 100%;
-      height: 400px;
+      width: 100%; height: 400px;
       object-fit: cover;
       display: block;
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
-    .carousel-card:hover img {
-      transform: scale(1.05);
-    }
-
+    .carousel-card:hover img { transform: scale(1.05); }
     .carousel-card-label {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0; left: 0; right: 0;
       padding: 24px;
       background: linear-gradient(transparent, rgba(44, 4, 5, 0.85));
     }
-
-    .carousel-card-label h4 {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-
+    .carousel-card-label h4 { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
     .carousel-card-label span {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.65rem;
@@ -413,76 +311,124 @@
       text-transform: uppercase;
     }
 
-    /* ===== OBJECTIVES CARDS ===== */
-    .objectives-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    /* ===== PHASE CARDS ===== */
+    .phases-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
       margin-top: 56px;
     }
 
-    .objective-card {
-      padding: 40px 32px;
+    .phase-card {
+      padding: 48px;
       border: 1px solid var(--border-strong);
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-xl);
       background: rgba(255, 255, 255, 0.4);
       backdrop-filter: blur(10px);
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
       overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 48px;
     }
 
-    .objective-card::before {
+    .phase-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(44, 4, 5, 0.08);
+    }
+
+    .phase-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 3px;
       background: linear-gradient(90deg, var(--accent), var(--accent-soft));
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    .phase-card:hover::before { transform: scaleX(1); }
 
-    .objective-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 60px rgba(44, 4, 5, 0.08);
+    .phase-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
     }
 
-    .objective-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .objective-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-sm);
-      background: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-    }
-
-    .objective-icon svg {
-      width: 24px;
-      height: 24px;
-      color: var(--card-text);
-    }
-
-    .objective-card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 12px;
+    .phase-card h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
       letter-spacing: -0.02em;
     }
 
-    .objective-card p {
-      font-size: 0.9rem;
+    .phase-card .phase-tagline {
+      font-size: 0.95rem;
       color: var(--muted);
-      line-height: 1.7;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .phase-deliverables {
+      list-style: none;
+    }
+
+    .phase-deliverables li {
+      font-size: 0.88rem;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--primary);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .phase-deliverables li:last-child { border-bottom: none; }
+    .phase-deliverables li .check { color: var(--accent); flex-shrink: 0; margin-top: 2px; font-size: 0.85rem; }
+
+    .phase-sidebar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+      padding-left: 48px;
+      border-left: 1px solid var(--border-strong);
+    }
+
+    .phase-price {
+      font-size: 2.4rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--primary);
+    }
+
+    .phase-timeline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .phase-optional {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      background: rgba(130, 43, 46, 0.08);
+      padding: 6px 14px;
+      border-radius: 100px;
+      display: inline-block;
+      margin-bottom: 8px;
+      width: fit-content;
     }
 
     /* ===== SCOPE OF WORK ===== */
@@ -492,21 +438,13 @@
       gap: 40px;
       margin-top: 56px;
     }
-
     .scope-column {
       padding: 40px;
       border: 1px solid var(--border-strong);
       border-radius: var(--radius-lg);
       background: rgba(255, 255, 255, 0.3);
     }
-
-    .scope-column h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 28px;
-      letter-spacing: -0.01em;
-    }
-
+    .scope-column h3 { font-size: 1rem; font-weight: 700; margin-bottom: 28px; letter-spacing: -0.01em; }
     .scope-item {
       display: flex;
       align-items: flex-start;
@@ -517,11 +455,7 @@
       color: var(--primary);
       line-height: 1.5;
     }
-
-    .scope-item:last-child {
-      border-bottom: none;
-    }
-
+    .scope-item:last-child { border-bottom: none; }
     .scope-item .slash {
       font-family: 'JetBrains Mono', monospace;
       color: var(--accent);
@@ -529,21 +463,14 @@
       flex-shrink: 0;
     }
 
-    /* ===== ROADMAP / TIMELINE ===== */
-    .roadmap {
-      margin-top: 56px;
-      position: relative;
-    }
-
+    /* ===== ROADMAP ===== */
+    .roadmap { margin-top: 56px; position: relative; }
     .roadmap-line {
       position: absolute;
-      left: 24px;
-      top: 0;
-      bottom: 0;
+      left: 24px; top: 0; bottom: 0;
       width: 1px;
       background: var(--border-strong);
     }
-
     .roadmap-step {
       display: flex;
       gap: 40px;
@@ -551,17 +478,11 @@
       position: relative;
       padding-left: 72px;
     }
-
-    .roadmap-step:last-child {
-      margin-bottom: 0;
-    }
-
+    .roadmap-step:last-child { margin-bottom: 0; }
     .roadmap-dot {
       position: absolute;
-      left: 12px;
-      top: 4px;
-      width: 24px;
-      height: 24px;
+      left: 12px; top: 4px;
+      width: 24px; height: 24px;
       border-radius: 50%;
       border: 2px solid var(--accent);
       background: var(--bg);
@@ -569,26 +490,14 @@
       align-items: center;
       justify-content: center;
     }
-
     .roadmap-dot span {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.55rem;
       font-weight: 700;
       color: var(--accent);
     }
-
-    .roadmap-content h4 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-
-    .roadmap-content p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
+    .roadmap-content h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .roadmap-content p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
 
     /* ===== COMMUNICATION ===== */
     .comm-grid {
@@ -597,7 +506,6 @@
       gap: 24px;
       margin-top: 48px;
     }
-
     .comm-card {
       padding: 32px 28px;
       border: 1px solid var(--border-strong);
@@ -606,12 +514,7 @@
       text-align: center;
       transition: all 0.3s;
     }
-
-    .comm-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent);
-    }
-
+    .comm-card:hover { transform: translateY(-3px); border-color: var(--accent); }
     .comm-card .label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.65rem;
@@ -620,14 +523,9 @@
       color: var(--accent);
       margin-bottom: 12px;
     }
+    .comm-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
 
-    .comm-card p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ===== ESCROW / RISK FREE ===== */
+    /* ===== ESCROW ===== */
     .escrow-card {
       background: linear-gradient(135deg, var(--card-bg), #3D1112);
       border-radius: var(--radius-xl);
@@ -637,7 +535,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .escrow-card::before {
       content: '';
       position: absolute;
@@ -645,13 +542,7 @@
       background: radial-gradient(circle at 50% 0%, rgba(130, 43, 46, 0.2), transparent 60%);
       pointer-events: none;
     }
-
-    .escrow-card .section-title {
-      color: var(--card-text);
-      position: relative;
-      z-index: 1;
-    }
-
+    .escrow-card .section-title { color: var(--card-text); position: relative; z-index: 1; }
     .escrow-card .section-subtitle {
       color: var(--card-muted);
       margin: 0 auto 40px;
@@ -659,7 +550,6 @@
       position: relative;
       z-index: 1;
     }
-
     .escrow-badge {
       display: inline-block;
       font-family: 'JetBrains Mono', monospace;
@@ -675,66 +565,61 @@
       z-index: 1;
     }
 
-    /* ===== INVESTMENT ===== */
-    .investment-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    /* ===== INVESTMENT SUMMARY ===== */
+    .investment-summary {
       margin-top: 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
     }
 
-    .invest-card {
-      padding: 40px 32px;
+    .invest-summary-card {
+      padding: 40px;
       border: 1px solid var(--border-strong);
       border-radius: var(--radius-lg);
       background: rgba(255, 255, 255, 0.4);
-      position: relative;
     }
 
-    .invest-card .label {
+    .invest-summary-card.highlight {
+      background: var(--card-bg);
+      color: var(--card-text);
+      border-color: transparent;
+    }
+
+    .invest-summary-card .label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.65rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
+    .invest-summary-card.highlight .label { color: var(--card-muted); }
 
-    .invest-card .value {
-      font-size: 1.8rem;
-      font-weight: 800;
+    .invest-summary-card .value {
+      font-size: 2.2rem;
+      font-weight: 900;
       letter-spacing: -0.03em;
       margin-bottom: 8px;
     }
 
-    .invest-card .detail {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .invest-card ul {
-      list-style: none;
-    }
-
-    .invest-card ul li {
+    .invest-summary-card .detail {
       font-size: 0.88rem;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--primary);
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
+      color: var(--muted);
+      line-height: 1.7;
     }
+    .invest-summary-card.highlight .detail { color: var(--card-muted); }
 
-    .invest-card ul li:last-child {
-      border-bottom: none;
-    }
-
-    .invest-card ul li .check {
-      color: var(--accent);
-      flex-shrink: 0;
-      margin-top: 2px;
+    .invest-note {
+      margin-top: 24px;
+      padding: 24px 32px;
+      background: rgba(130, 43, 46, 0.06);
+      border: 1px solid rgba(130, 43, 46, 0.12);
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      text-align: center;
     }
 
     /* ===== ADD-ONS ===== */
@@ -744,7 +629,6 @@
       gap: 24px;
       margin-top: 56px;
     }
-
     .addon-card {
       padding: 40px 32px;
       border: 1px dashed var(--border-strong);
@@ -752,28 +636,42 @@
       background: rgba(255, 255, 255, 0.2);
       transition: all 0.3s;
     }
-
     .addon-card:hover {
       border-style: solid;
       border-color: var(--accent);
       background: rgba(255, 255, 255, 0.5);
     }
+    .addon-card .addon-icon { font-size: 1.6rem; margin-bottom: 20px; }
+    .addon-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; }
+    .addon-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
 
-    .addon-card .addon-icon {
-      font-size: 1.6rem;
-      margin-bottom: 20px;
+    /* ===== RETAINER ===== */
+    .retainer-card {
+      margin-top: 32px;
+      padding: 40px 48px;
+      border: 2px solid var(--accent);
+      border-radius: var(--radius-lg);
+      background: rgba(130, 43, 46, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
     }
-
-    .addon-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 12px;
+    .retainer-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+    .retainer-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; max-width: 600px; }
+    .retainer-price {
+      font-size: 1.3rem;
+      font-weight: 800;
+      white-space: nowrap;
+      color: var(--accent);
     }
-
-    .addon-card p {
-      font-size: 0.88rem;
+    .retainer-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--muted);
-      line-height: 1.7;
+      margin-top: 4px;
     }
 
     /* ===== CASE STUDIES ===== */
@@ -783,32 +681,18 @@
       gap: 24px;
       margin-top: 56px;
     }
-
     .case-card {
       border-radius: var(--radius-lg);
       overflow: hidden;
       border: 1px solid var(--border-strong);
       background: #fff;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
     }
-
     .case-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 24px 64px rgba(44, 4, 5, 0.1);
     }
-
-    .case-card-image {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .case-card-body {
-      padding: 28px 32px 32px;
-    }
-
+    .case-card-body { padding: 28px 32px 32px; }
     .case-card-tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.6rem;
@@ -817,20 +701,8 @@
       color: var(--accent);
       margin-bottom: 10px;
     }
-
-    .case-card-body h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      letter-spacing: -0.02em;
-    }
-
-    .case-card-body p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
+    .case-card-body h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.02em; }
+    .case-card-body p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
     .case-card-link {
       display: inline-flex;
       align-items: center;
@@ -844,17 +716,10 @@
       margin-top: 16px;
       transition: gap 0.3s;
     }
+    .case-card-link:hover { gap: 12px; }
 
-    .case-card-link:hover {
-      gap: 12px;
-    }
-
-    /* ===== CTA FOOTER ===== */
-    .cta-section {
-      padding: 160px 0 80px;
-      text-align: center;
-    }
-
+    /* ===== CTA ===== */
+    .cta-section { padding: 160px 0 80px; text-align: center; }
     .cta-title {
       font-size: clamp(2.5rem, 5vw, 4.5rem);
       font-weight: 900;
@@ -862,7 +727,6 @@
       line-height: 1.05;
       margin-bottom: 32px;
     }
-
     .cta-text {
       font-size: 1.1rem;
       color: var(--muted);
@@ -870,7 +734,6 @@
       margin: 0 auto 48px;
       line-height: 1.7;
     }
-
     .cta-email {
       display: inline-flex;
       align-items: center;
@@ -885,25 +748,14 @@
       border-radius: 100px;
       transition: all 0.3s;
     }
+    .cta-email:hover { background: var(--accent); color: var(--card-text); }
 
-    .cta-email:hover {
-      background: var(--accent);
-      color: var(--card-text);
-    }
-
-    /* Footer */
     .footer {
       padding: 40px 0;
       border-top: 1px solid var(--border);
       text-align: center;
     }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-    }
-
+    .footer-links { display: flex; justify-content: center; gap: 32px; }
     .footer-links a {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
@@ -913,130 +765,9 @@
       text-decoration: none;
       transition: color 0.3s;
     }
+    .footer-links a:hover { color: var(--accent); }
 
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-
-    /* ===== DIVIDER ===== */
-    .section-divider {
-      border: none;
-      height: 1px;
-      background: var(--border);
-      margin: 0;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-      .objectives-grid,
-      .investment-grid,
-      .addons-grid,
-      .comm-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      :root {
-        --section-padding: 80px;
-      }
-
-      .container {
-        padding: 0 20px;
-      }
-
-      .dark-card {
-        padding: 40px 28px;
-      }
-
-      .dark-card-grid,
-      .scope-grid,
-      .cases-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .objectives-grid,
-      .investment-grid,
-      .addons-grid,
-      .comm-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 120px 0 80px;
-      }
-
-      .carousel-card {
-        width: 260px;
-      }
-
-      .carousel-card img {
-        height: 320px;
-      }
-
-      .escrow-card {
-        padding: 56px 28px;
-      }
-
-      .trusted-bar .container {
-        flex-direction: column;
-        gap: 20px;
-      }
-    }
-
-    /* ===== PAGE LOADING ===== */
-    .page-loader {
-      position: fixed;
-      inset: 0;
-      background: var(--primary);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.6s, visibility 0.6s;
-    }
-
-    .page-loader.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loader-text {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--card-muted);
-      animation: loader-blink 1.5s ease-in-out infinite;
-    }
-
-    @keyframes loader-blink {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
-    }
-
-    /* ===== MISC ===== */
-    .accent-line {
-      width: 48px;
-      height: 2px;
-      background: var(--accent);
-      margin-bottom: 24px;
-    }
-
-    .tag-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--card-text);
-      background: var(--accent);
-      padding: 6px 16px;
-      border-radius: 100px;
-    }
+    .section-divider { border: none; height: 1px; background: var(--border); margin: 0; }
 
     .notion-bar {
       margin-top: 48px;
@@ -1048,45 +779,60 @@
       align-items: center;
       gap: 12px;
     }
+    .notion-bar .icon { font-size: 1.2rem; }
+    .notion-bar p { font-size: 0.88rem; color: var(--muted); }
+    .notion-bar strong { color: var(--primary); }
 
-    .notion-bar .icon {
-      font-size: 1.2rem;
+    /* ===== PAGE LOADER ===== */
+    .page-loader {
+      position: fixed; inset: 0;
+      background: var(--primary);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s, visibility 0.6s;
+    }
+    .page-loader.hidden { opacity: 0; visibility: hidden; }
+    .loader-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--card-muted);
+      animation: loader-blink 1.5s ease-in-out infinite;
+    }
+    @keyframes loader-blink {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
     }
 
-    .notion-bar p {
-      font-size: 0.88rem;
-      color: var(--muted);
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .phase-card { grid-template-columns: 1fr; gap: 32px; }
+      .phase-sidebar { padding-left: 0; border-left: none; border-top: 1px solid var(--border-strong); padding-top: 24px; }
+      .investment-summary { grid-template-columns: 1fr; }
+      .addons-grid, .comm-grid { grid-template-columns: 1fr 1fr; }
     }
 
-    .notion-bar strong {
-      color: var(--primary);
-    }
-
-    /* Accelerated delivery pill */
-    .delivery-section {
-      margin-top: 48px;
-      padding: 32px;
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, rgba(130, 43, 46, 0.05), rgba(255,255,255,0.4));
-      text-align: center;
-    }
-
-    .delivery-section h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .delivery-section p {
-      font-size: 0.88rem;
-      color: var(--muted);
+    @media (max-width: 768px) {
+      :root { --section-padding: 80px; }
+      .container { padding: 0 20px; }
+      .dark-card { padding: 40px 28px; }
+      .dark-card-grid, .scope-grid, .cases-grid { grid-template-columns: 1fr; }
+      .addons-grid, .comm-grid { grid-template-columns: 1fr; }
+      .phase-card { padding: 32px; }
+      .hero { padding: 120px 0 80px; }
+      .carousel-card { width: 260px; }
+      .carousel-card img { height: 320px; }
+      .escrow-card { padding: 56px 28px; }
+      .trusted-bar .container { flex-direction: column; gap: 20px; }
+      .retainer-card { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- Page Loader -->
 <div class="page-loader" id="pageLoader">
   <span class="loader-text">Loading Proposal...</span>
 </div>
@@ -1109,9 +855,10 @@
       </h1>
 
       <p class="hero-description">
-        A strategic proposal to launch and scale your savoury protein bar brand on Shopify. 
-        Not a generic pitch — this is the blueprint for transforming your concept into a 
-        high-converting e-commerce machine, powered by AI and automation.
+        A strategic proposal to design, develop, and launch your Shopify store
+        in time for production. From brand identity to AI-powered engagement,
+        this is the full blueprint for turning your concept into a high-converting
+        e-commerce machine.
       </p>
 
       <div class="hero-badge">
@@ -1120,8 +867,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Decorative Background Element -->
   <div class="hero-graphic">
     <svg viewBox="0 0 500 500" fill="none">
       <circle cx="250" cy="250" r="200" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
@@ -1148,39 +893,41 @@
   </div>
 </div>
 
-<!-- ====================== MARKET POSITIONING ====================== -->
-<section id="market-positioning">
+<!-- ====================== ABOUT THE PROJECT ====================== -->
+<section id="about-project">
   <div class="container">
     <div class="dark-card fade-in">
-      <div class="section-number">01 // MARKET_POSITIONING</div>
+      <div class="section-number">01 // ABOUT_THE_PROJECT</div>
       <div class="dark-card-status">
         <span class="line"></span>
-        STATUS: MARKET READY
+        STATUS: PRE-LAUNCH
       </div>
-      <h2 class="section-title" style="color: var(--card-text); max-width: 700px;">
-        The savoury protein bar category is where real disruption happens.
+      <h2 class="section-title" style="color: var(--card-text); max-width: 750px;">
+        A savory protein bar brand. Brunch-inspired flavors, not sweet.
       </h2>
       <p class="section-subtitle" style="margin-top: 16px;">
-        Sweet protein bars dominate the market — but consumers are craving savoury. 
-        Your brand has the opportunity to own an emerging category before the incumbents catch on.
+        Zach Ehrlich is launching a savory protein bar brand with initial formulas ready. 
+        Production is targeted for August through September, with inventory ready to ship 
+        between September and October. The web presence needs to be live by September 
+        to align with that timeline.
       </p>
 
       <div class="dark-card-grid">
         <div class="dark-card-item fade-in fade-in-delay-1">
-          <h4>Current Opportunity</h4>
-          <p>The savoury snack bar segment is growing rapidly as health-conscious consumers look beyond sugar-laden alternatives. First-mover advantage is critical.</p>
+          <h4>The Product</h4>
+          <p>Savory, brunch-inspired protein bars that break away from the saturated sweet bar market. Real ingredients, real differentiation, real opportunity.</p>
         </div>
         <div class="dark-card-item fade-in fade-in-delay-2">
-          <h4>Digital Strategy</h4>
-          <p>A conversion-optimized Shopify store with AI-powered customer engagement and automated email flows to build a loyal subscriber base from day one.</p>
+          <h4>The Store</h4>
+          <p>A Shopify-based DTC (direct-to-consumer) store with strong product imagery, nutritional info, ingredient breakdowns, and competitive positioning.</p>
         </div>
         <div class="dark-card-item fade-in fade-in-delay-3">
-          <h4>Brand Consistency</h4>
-          <p>Total alignment of UX, visual narrative, and product messaging at every digital touchpoint — from landing page to checkout to post-purchase email.</p>
+          <h4>The Brand Story</h4>
+          <p>Zach's transition from real estate to CPG, the "why" behind the product, and a visual identity built around minimalist design with AI-generated illustrations.</p>
         </div>
         <div class="dark-card-item fade-in fade-in-delay-4">
-          <h4>Growth Capacity</h4>
-          <p>Building infrastructure that scales with your brand — from a DTC launch to wholesale, subscriptions, and retail expansion.</p>
+          <h4>The Timeline</h4>
+          <p>Production targets August/September. Inventory ships September/October. The site must be live and conversion-ready by September to meet this window.</p>
         </div>
       </div>
     </div>
@@ -1194,121 +941,74 @@
     <h2 class="section-title fade-in">Visual Direction</h2>
     <p class="section-subtitle fade-in">Concept imagery for your product photography. Every shot tells a story of craftsmanship and real ingredients.</p>
   </div>
-
   <div class="carousel-track" id="carouselTrack">
-    <!-- Set 1 -->
     <div class="carousel-card">
       <img src="images/hero.png" alt="Studio context product photography">
-      <div class="carousel-card-label">
-        <h4>Studio Context</h4>
-        <span>Warmth / Artisanal</span>
-      </div>
+      <div class="carousel-card-label"><h4>Studio Context</h4><span>Warmth / Artisanal</span></div>
     </div>
     <div class="carousel-card">
       <img src="images/clean.png" alt="Clean isolated product shot">
-      <div class="carousel-card-label">
-        <h4>Product Focus</h4>
-        <span>Isolated / Clean</span>
-      </div>
+      <div class="carousel-card-label"><h4>Product Focus</h4><span>Isolated / Clean</span></div>
     </div>
     <div class="carousel-card">
       <img src="images/dramatic.png" alt="Dramatic shadow play photography">
-      <div class="carousel-card-label">
-        <h4>Shadow Play</h4>
-        <span>Dramatic / Premium</span>
-      </div>
+      <div class="carousel-card-label"><h4>Shadow Play</h4><span>Dramatic / Premium</span></div>
     </div>
     <div class="carousel-card">
       <img src="images/lifestyle.png" alt="Lifestyle product photography">
-      <div class="carousel-card-label">
-        <h4>Lifestyle Context</h4>
-        <span>Natural / Relatable</span>
-      </div>
+      <div class="carousel-card-label"><h4>Lifestyle Context</h4><span>Natural / Relatable</span></div>
     </div>
     <div class="carousel-card">
       <img src="images/ingredients.png" alt="Ingredients flat lay">
-      <div class="carousel-card-label">
-        <h4>Ingredients Reveal</h4>
-        <span>Transparent / Honest</span>
-      </div>
+      <div class="carousel-card-label"><h4>Ingredients Reveal</h4><span>Transparent / Honest</span></div>
     </div>
-    <!-- Set 2 (duplicate for infinite scroll) -->
     <div class="carousel-card">
       <img src="images/hero.png" alt="Studio context product photography">
-      <div class="carousel-card-label">
-        <h4>Studio Context</h4>
-        <span>Warmth / Artisanal</span>
-      </div>
+      <div class="carousel-card-label"><h4>Studio Context</h4><span>Warmth / Artisanal</span></div>
     </div>
     <div class="carousel-card">
       <img src="images/clean.png" alt="Clean isolated product shot">
-      <div class="carousel-card-label">
-        <h4>Product Focus</h4>
-        <span>Isolated / Clean</span>
-      </div>
+      <div class="carousel-card-label"><h4>Product Focus</h4><span>Isolated / Clean</span></div>
     </div>
     <div class="carousel-card">
       <img src="images/dramatic.png" alt="Dramatic shadow play photography">
-      <div class="carousel-card-label">
-        <h4>Shadow Play</h4>
-        <span>Dramatic / Premium</span>
-      </div>
+      <div class="carousel-card-label"><h4>Shadow Play</h4><span>Dramatic / Premium</span></div>
     </div>
     <div class="carousel-card">
       <img src="images/lifestyle.png" alt="Lifestyle product photography">
-      <div class="carousel-card-label">
-        <h4>Lifestyle Context</h4>
-        <span>Natural / Relatable</span>
-      </div>
+      <div class="carousel-card-label"><h4>Lifestyle Context</h4><span>Natural / Relatable</span></div>
     </div>
     <div class="carousel-card">
       <img src="images/ingredients.png" alt="Ingredients flat lay">
-      <div class="carousel-card-label">
-        <h4>Ingredients Reveal</h4>
-        <span>Transparent / Honest</span>
-      </div>
+      <div class="carousel-card-label"><h4>Ingredients Reveal</h4><span>Transparent / Honest</span></div>
     </div>
   </div>
 </section>
 
-<!-- ====================== STRATEGIC OBJECTIVES ====================== -->
-<section id="objectives">
+<!-- ====================== SITE CONTENT NEEDS ====================== -->
+<section id="content-needs">
   <div class="container">
-    <div class="section-number fade-in">03 // STRATEGIC_OBJECTIVES</div>
-    <h2 class="section-title fade-in">Three Pillars of<br>Your Digital Launch</h2>
+    <div class="section-number fade-in">03 // SITE_CONTENT</div>
+    <h2 class="section-title fade-in">What the Site Needs</h2>
+    <p class="section-subtitle fade-in">A comprehensive content system built to convert visitors into loyal customers.</p>
 
-    <div class="objectives-grid">
-      <div class="objective-card fade-in fade-in-delay-1">
-        <div class="objective-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-            <line x1="8" y1="21" x2="16" y2="21"/>
-            <line x1="12" y1="17" x2="12" y2="21"/>
-          </svg>
-        </div>
-        <h3>Scalable Shopify Store</h3>
-        <p>A high-performance Shopify storefront designed for conversion, with custom product pages, optimized checkout flow, and a brand experience that turns visitors into subscribers.</p>
+    <div class="scope-grid">
+      <div class="scope-column fade-in fade-in-delay-1">
+        <h3>Core Pages</h3>
+        <div class="scope-item"><span class="slash">/</span> Homepage with brand story and product positioning</div>
+        <div class="scope-item"><span class="slash">/</span> Product pages with imagery, nutritional info, and ingredient breakdowns</div>
+        <div class="scope-item"><span class="slash">/</span> About / brand story section</div>
+        <div class="scope-item"><span class="slash">/</span> Contact page</div>
+        <div class="scope-item"><span class="slash">/</span> Wholesale/distribution info page (as the business scales)</div>
       </div>
 
-      <div class="objective-card fade-in fade-in-delay-2">
-        <div class="objective-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
-        </div>
-        <h3>AI-Powered Experience</h3>
-        <p>A custom AI bot trained on your product data to handle customer inquiries 24/7, follow up based on user behavior and journey, and drive conversions through intelligent engagement.</p>
-      </div>
-
-      <div class="objective-card fade-in fade-in-delay-3">
-        <div class="objective-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-        </div>
-        <h3>Automated Email Flows</h3>
-        <p>Strategic email automation — welcome sequences, abandoned cart recovery, post-purchase nurturing, and re-engagement campaigns that generate recurring revenue on autopilot.</p>
+      <div class="scope-column fade-in fade-in-delay-2">
+        <h3>Systems and Intelligence</h3>
+        <div class="scope-item"><span class="slash">/</span> Email capture and post-purchase flows</div>
+        <div class="scope-item"><span class="slash">/</span> Abandoned cart recovery sequences</div>
+        <div class="scope-item"><span class="slash">/</span> AI-powered quiz or chatbot for product recommendations</div>
+        <div class="scope-item"><span class="slash">/</span> Personalized messaging based on diet, goals, and preferences</div>
+        <div class="scope-item"><span class="slash">/</span> AI-generated illustrations and imagery for brand identity</div>
       </div>
     </div>
   </div>
@@ -1316,66 +1016,144 @@
 
 <hr class="section-divider">
 
-<!-- ====================== SCOPE OF WORK ====================== -->
-<section id="scope">
+<!-- ====================== PHASES ====================== -->
+<section id="phases">
   <div class="container">
-    <div class="section-number fade-in">04 // SCOPE_OF_WORK</div>
-    <h2 class="section-title fade-in">Full-Stack Delivery</h2>
-    <p class="section-subtitle fade-in">Everything you need to launch strong and grow fast, covered in one engagement.</p>
+    <div class="section-number fade-in">04 // QUOTE_STRUCTURE</div>
+    <h2 class="section-title fade-in">Modular Pricing,<br>Phased Delivery</h2>
+    <p class="section-subtitle fade-in">A transparent, milestone-based approach that lets you scale investment with confidence.</p>
 
-    <div class="scope-grid">
-      <div class="scope-column fade-in fade-in-delay-1">
-        <h3>Strategy & UX</h3>
-        <div class="scope-item">
-          <span class="slash">/</span> Digital Brand Architecture Audit
+    <div class="phases-grid">
+
+      <!-- Phase 1 -->
+      <div class="phase-card fade-in">
+        <div class="phase-content">
+          <div class="phase-number">Phase 1</div>
+          <h3>Brand Website + Shopify Store</h3>
+          <p class="phase-tagline">Design, development, and launch-ready by September.</p>
+          <ul class="phase-deliverables">
+            <li><span class="check">&#10003;</span> Homepage design and development</li>
+            <li><span class="check">&#10003;</span> Product page templates (PDP with nutrition, ingredients, imagery)</li>
+            <li><span class="check">&#10003;</span> About / brand story page</li>
+            <li><span class="check">&#10003;</span> Contact page</li>
+            <li><span class="check">&#10003;</span> Shopify setup (payments, shipping, basic inventory config)</li>
+            <li><span class="check">&#10003;</span> Mobile-responsive, performance-optimized</li>
+            <li><span class="check">&#10003;</span> AI-generated imagery and illustrations for brand identity</li>
+            <li><span class="check">&#10003;</span> Basic email capture integration (Klaviyo or Mailchimp)</li>
+          </ul>
         </div>
-        <div class="scope-item">
-          <span class="slash">/</span> User Flow Mapping (Shopify Optimization)
-        </div>
-        <div class="scope-item">
-          <span class="slash">/</span> High-Fidelity Interface Design (Premium)
-        </div>
-        <div class="scope-item">
-          <span class="slash">/</span> Product Page UX & Conversion Strategy
-        </div>
-        <div class="scope-item">
-          <span class="slash">/</span> Mobile-First Responsive Design
+        <div class="phase-sidebar">
+          <div>
+            <div class="phase-price">$5,000</div>
+          </div>
+          <div>
+            <div class="phase-timeline">Timeline</div>
+            <div style="font-size: 1.1rem; font-weight: 700; margin-top: 4px;">6 to 8 weeks</div>
+            <div style="font-size: 0.8rem; color: var(--muted); margin-top: 4px;">From kickoff</div>
+          </div>
         </div>
       </div>
 
-      <div class="scope-column fade-in fade-in-delay-2">
-        <h3>Development & Systems</h3>
-        <div class="scope-item">
-          <span class="slash">/</span> Custom Shopify Theme Development
+      <!-- Phase 2 -->
+      <div class="phase-card fade-in">
+        <div class="phase-content">
+          <div class="phase-number">Phase 2</div>
+          <h3>Conversion + Retention Layer</h3>
+          <p class="phase-tagline">Post-launch engagement system.</p>
+          <ul class="phase-deliverables">
+            <li><span class="check">&#10003;</span> Abandoned cart email flows (3-email sequence)</li>
+            <li><span class="check">&#10003;</span> Post-purchase email sequences</li>
+            <li><span class="check">&#10003;</span> AI-powered product recommendation quiz or chatbot</li>
+            <li><span class="check">&#10003;</span> Personalized messaging logic</li>
+          </ul>
         </div>
-        <div class="scope-item">
-          <span class="slash">/</span> AI Bot Integration & Training
-        </div>
-        <div class="scope-item">
-          <span class="slash">/</span> Email Automation Setup (Klaviyo / Mailchimp)
-        </div>
-        <div class="scope-item">
-          <span class="slash">/</span> Analytics & Behavior Tracking
-        </div>
-        <div class="scope-item">
-          <span class="slash">/</span> Payment & Checkout Optimization
+        <div class="phase-sidebar">
+          <div>
+            <div class="phase-price">$2,000</div>
+          </div>
+          <div>
+            <div class="phase-timeline">Timeline</div>
+            <div style="font-size: 1.1rem; font-weight: 700; margin-top: 4px;">3 to 4 weeks</div>
+            <div style="font-size: 0.8rem; color: var(--muted); margin-top: 4px;">Can run in parallel with Phase 1's final stretch</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="notion-bar fade-in">
-      <span class="icon">📋</span>
-      <p>Everything is documented in <strong>Notion</strong>. You have full visibility, 24/7.</p>
+      <!-- Phase 3 -->
+      <div class="phase-card fade-in">
+        <div class="phase-content">
+          <div class="phase-optional">Optional</div>
+          <div class="phase-number">Phase 3</div>
+          <h3>Inventory + Operations Audit</h3>
+          <p class="phase-tagline">Paid discovery to evaluate and recommend the right inventory setup.</p>
+          <ul class="phase-deliverables">
+            <li><span class="check">&#10003;</span> Audit of current operational needs</li>
+            <li><span class="check">&#10003;</span> Evaluation of off-the-shelf vs custom inventory solutions</li>
+            <li><span class="check">&#10003;</span> Shopify API integration scoping</li>
+            <li><span class="check">&#10003;</span> Recommendation document with implementation roadmap</li>
+            <li><span class="check">&#10003;</span> Fee applies as credit toward development if custom build is greenlit</li>
+          </ul>
+        </div>
+        <div class="phase-sidebar">
+          <div>
+            <div class="phase-price">$1,000</div>
+          </div>
+          <div>
+            <div class="phase-timeline">Timeline</div>
+            <div style="font-size: 1.1rem; font-weight: 700; margin-top: 4px;">1 to 2 weeks</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ====================== ROADMAP ====================== -->
+<!-- ====================== INVESTMENT SUMMARY ====================== -->
+<section id="investment">
+  <div class="container">
+    <div class="section-number fade-in">05 // TOTAL_INVESTMENT</div>
+    <h2 class="section-title fade-in">Investment Summary</h2>
+
+    <div class="investment-summary">
+      <div class="invest-summary-card highlight fade-in fade-in-delay-1">
+        <div class="label">Total Project (Phases 1 + 2)</div>
+        <div class="value">$7,000</div>
+        <p class="detail">Full brand website, Shopify store, AI-powered engagement, and automated email flows.</p>
+      </div>
+      <div class="invest-summary-card fade-in fade-in-delay-2">
+        <div class="label">With Optional Audit (Phases 1 + 2 + 3)</div>
+        <div class="value">$8,000</div>
+        <p class="detail">Everything above plus a dedicated inventory and operations audit with implementation roadmap.</p>
+      </div>
+    </div>
+
+    <div class="invest-note fade-in">
+      Payment terms are flexible and can be discussed to fit the project's needs.
+    </div>
+
+    <!-- Retainer -->
+    <div class="retainer-card fade-in">
+      <div>
+        <h3>Optional Retainer: Ongoing Support</h3>
+        <p>Monthly maintenance, content updates, CMS management, minor design tweaks, and analytics review.</p>
+      </div>
+      <div style="text-align: right;">
+        <div class="retainer-price">$500 to $800</div>
+        <div class="retainer-sub">Per Month</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ====================== EXECUTION ROADMAP ====================== -->
 <section id="roadmap">
   <div class="container">
-    <div class="section-number fade-in">05 // EXECUTION_ROADMAP</div>
+    <div class="section-number fade-in">06 // EXECUTION_ROADMAP</div>
     <h2 class="section-title fade-in">How We Get There</h2>
-    <p class="section-subtitle fade-in">A sprint-based approach designed for speed and precision.</p>
+    <p class="section-subtitle fade-in">A sprint-based approach aligned with your production timeline.</p>
 
     <div class="roadmap">
       <div class="roadmap-line"></div>
@@ -1383,8 +1161,8 @@
       <div class="roadmap-step fade-in fade-in-delay-1">
         <div class="roadmap-dot"><span>01</span></div>
         <div class="roadmap-content">
-          <h4>Radical Alignment & Setup</h4>
-          <p>Deep discovery session with you. We map the brand DNA, set up the Notion Project Dashboard, and align on visual direction & product positioning.</p>
+          <h4>Radical Alignment and Setup</h4>
+          <p>Deep discovery session with you. We map the brand DNA, set up the Notion Project Dashboard, and align on visual direction and product positioning.</p>
         </div>
       </div>
 
@@ -1399,7 +1177,7 @@
       <div class="roadmap-step fade-in fade-in-delay-3">
         <div class="roadmap-dot"><span>03</span></div>
         <div class="roadmap-content">
-          <h4>Build & Integration</h4>
+          <h4>Build and Integration</h4>
           <p>Shopify theme development, AI bot training and deployment, email automation setup. Stress testing across devices and scenarios.</p>
         </div>
       </div>
@@ -1407,8 +1185,8 @@
       <div class="roadmap-step fade-in fade-in-delay-4">
         <div class="roadmap-dot"><span>04</span></div>
         <div class="roadmap-content">
-          <h4>Launch & Scale</h4>
-          <p>Strategic go-live with post-launch monitoring. Performance optimization, bug fixes, and analytics review to ensure a strong start.</p>
+          <h4>Launch and Scale</h4>
+          <p>Strategic go-live aligned with your September production date. Post-launch monitoring, performance optimization, and analytics review.</p>
         </div>
       </div>
     </div>
@@ -1418,13 +1196,13 @@
 <!-- ====================== COMMUNICATION ====================== -->
 <section id="communication">
   <div class="container">
-    <div class="section-number fade-in">05.5 // COMMUNICATION</div>
+    <div class="section-number fade-in">06.5 // COMMUNICATION</div>
     <h2 class="section-title fade-in">How We Work Together</h2>
 
     <div class="comm-grid">
       <div class="comm-card fade-in fade-in-delay-1">
         <div class="label">PROJECT</div>
-        <p>Notion for 24/7 visibility & clarity on every milestone, task, and decision.</p>
+        <p>Notion for 24/7 visibility and clarity on every milestone, task, and decision.</p>
       </div>
       <div class="comm-card fade-in fade-in-delay-2">
         <div class="label">FEEDBACK</div>
@@ -1435,6 +1213,11 @@
         <p>Weekly Strategic Sprint Alignment. 30 min focused calls to keep momentum high.</p>
       </div>
     </div>
+
+    <div class="notion-bar fade-in">
+      <span class="icon">📋</span>
+      <p>Everything is documented in <strong>Notion</strong>. You have full visibility, 24/7.</p>
+    </div>
   </div>
 </section>
 
@@ -1444,7 +1227,7 @@
 <section id="escrow">
   <div class="container">
     <div class="escrow-card fade-in">
-      <div class="section-number" style="color: var(--card-muted);">06 // RISK_FREE_EXECUTION</div>
+      <div class="section-number" style="color: var(--card-muted);">07 // RISK_FREE_EXECUTION</div>
       <h2 class="section-title" style="max-width: 700px; margin: 0 auto 16px;">
         Risk-Free Execution<br>via Contra
       </h2>
@@ -1460,69 +1243,28 @@
   </div>
 </section>
 
-<!-- ====================== INVESTMENT ====================== -->
-<section id="investment">
-  <div class="container">
-    <div class="section-number fade-in">06.5 // TOTAL_INVESTMENT</div>
-    <h2 class="section-title fade-in">Total Investment</h2>
-
-    <div class="investment-grid">
-      <div class="invest-card fade-in fade-in-delay-1">
-        <div class="label">Professional Services Included</div>
-        <ul>
-          <li><span class="check">✓</span> Full Shopify Store Design & Build</li>
-          <li><span class="check">✓</span> Custom AI Bot Development & Training</li>
-          <li><span class="check">✓</span> Automated Email Flow Setup</li>
-          <li><span class="check">✓</span> Product Photography Direction</li>
-          <li><span class="check">✓</span> User Journey & Behavior Tracking</li>
-          <li><span class="check">✓</span> Full Page Design & Logic Build</li>
-        </ul>
-      </div>
-
-      <div class="invest-card fade-in fade-in-delay-2">
-        <div class="label">Estimated Timeline</div>
-        <div class="value">1 — 1.5 Months</div>
-        <p class="detail">Dependent on feedback & revisions. Our sprint-based workflow keeps velocity high.</p>
-      </div>
-
-      <div class="invest-card fade-in fade-in-delay-3">
-        <div class="label">Payment Structure</div>
-        <div class="value">3 × $1,500 USD</div>
-        <p class="detail">Released per milestone via Contra. Each milestone clearly defined and approved by you before funds release.</p>
-      </div>
-    </div>
-
-    <div class="delivery-section fade-in">
-      <h3>⚡ Accelerated Delivery</h3>
-      <p>Our sprint-based workflow allows us to deliver the full Scope of Work in approximately 1 — 1.5 months.</p>
-    </div>
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<!-- ====================== SCALABLE ADD-ONS ====================== -->
+<!-- ====================== OPTIONAL ADD-ONS ====================== -->
 <section id="addons">
   <div class="container">
-    <div class="section-number fade-in">07 // SCALABLE_ADD-ONS</div>
+    <div class="section-number fade-in">08 // OPTIONAL_ADD-ONS</div>
     <h2 class="section-title fade-in">Future Growth</h2>
-    <p class="section-subtitle fade-in">When your brand is ready to expand, we're ready to build.</p>
+    <p class="section-subtitle fade-in">When your brand is ready to expand, we are ready to build.</p>
 
     <div class="addons-grid">
       <div class="addon-card fade-in fade-in-delay-1">
-        <div class="addon-icon">🤖</div>
-        <h3>Custom AI Agents</h3>
-        <p>Trained on your product data for 24/7 customer support, personalized recommendations, and automated sales conversations.</p>
+        <div class="addon-icon">🏗️</div>
+        <h3>Custom Inventory System</h3>
+        <p>Custom inventory management or third-party integration. Shopify API sync for stock levels and operational efficiency.</p>
       </div>
       <div class="addon-card fade-in fade-in-delay-2">
-        <div class="addon-icon">📊</div>
-        <h3>Independent CRM</h3>
-        <p>Own your data. Custom pipeline setup for wholesale, B2B partnerships, and retail expansion tracking.</p>
+        <div class="addon-icon">🏢</div>
+        <h3>Wholesale / B2B Portal</h3>
+        <p>Dedicated ordering portal for wholesale and B2B distribution as the business scales beyond DTC.</p>
       </div>
       <div class="addon-card fade-in fade-in-delay-3">
-        <div class="addon-icon">📧</div>
-        <h3>Advanced Mailing</h3>
-        <p>Sophisticated campaigns for customer loyalty, subscription management, and recurring revenue generation at scale.</p>
+        <div class="addon-icon">📈</div>
+        <h3>Marketing and Analytics</h3>
+        <p>Additional landing pages for marketing campaigns, analytics setup, and conversion tracking for data-driven growth.</p>
       </div>
     </div>
   </div>
@@ -1531,7 +1273,7 @@
 <!-- ====================== CASE STUDIES ====================== -->
 <section id="cases">
   <div class="container">
-    <div class="section-number fade-in">08 // RELEVANT_CASES</div>
+    <div class="section-number fade-in">09 // RELEVANT_CASES</div>
     <h2 class="section-title fade-in">Proven Track Record</h2>
     <p class="section-subtitle fade-in">A selection of projects that demonstrate our capability in e-commerce, branding, and technical excellence.</p>
 
@@ -1541,10 +1283,10 @@
           <span style="font-size: 2rem; font-weight: 800; color: rgba(255,255,255,0.15); letter-spacing: 0.1em;">DRINK MEDLY</span>
         </div>
         <div class="case-card-body">
-          <div class="case-card-tag">E-COMMERCE • UX</div>
+          <div class="case-card-tag">E-COMMERCE / UX</div>
           <h3>Drink Medly</h3>
           <p>A clean, mobile-first e-commerce site built around a dynamic bundle/checkout flow and subscription logic, with a minimal, conversion-focused UI.</p>
-          <span class="case-card-link">View Project →</span>
+          <span class="case-card-link">View Project &#8594;</span>
         </div>
       </a>
 
@@ -1553,10 +1295,10 @@
           <span style="font-size: 1.6rem; font-weight: 800; color: rgba(255,255,255,0.15); letter-spacing: 0.1em;">BOCA DE AGUA</span>
         </div>
         <div class="case-card-body">
-          <div class="case-card-tag">BRANDING • HOSPITALITY</div>
+          <div class="case-card-tag">BRANDING / HOSPITALITY</div>
           <h3>Eco Luxury Hotel, Boca De Agua</h3>
           <p>A sustainable hospitality experience. The design translates the organic philosophy of the brand into a visual digital narrative.</p>
-          <span class="case-card-link">View Project →</span>
+          <span class="case-card-link">View Project &#8594;</span>
         </div>
       </a>
 
@@ -1565,10 +1307,10 @@
           <span style="font-size: 2rem; font-weight: 800; color: rgba(255,255,255,0.15); letter-spacing: 0.1em;">WORTISE</span>
         </div>
         <div class="case-card-body">
-          <div class="case-card-tag">TECH • DASHBOARD</div>
+          <div class="case-card-tag">TECH / DASHBOARD</div>
           <h3>Wortise</h3>
           <p>Advanced ad monetization platform. We designed high-density data dashboards that remain intuitive and performant.</p>
-          <span class="case-card-link">View Project →</span>
+          <span class="case-card-link">View Project &#8594;</span>
         </div>
       </a>
 
@@ -1577,10 +1319,10 @@
           <span style="font-size: 1.6rem; font-weight: 800; color: rgba(255,255,255,0.15); letter-spacing: 0.1em;">CASITA CRAFTERS</span>
         </div>
         <div class="case-card-body">
-          <div class="case-card-tag">REAL ESTATE • WEB</div>
+          <div class="case-card-tag">REAL ESTATE / WEB</div>
           <h3>Casita Crafters</h3>
           <p>Flexible space for your ever-changing needs. A boutique builder of accessory dwelling units with a responsive, conversion-focused layout.</p>
-          <span class="case-card-link">View Project →</span>
+          <span class="case-card-link">View Project &#8594;</span>
         </div>
       </a>
     </div>
@@ -1589,7 +1331,7 @@
 
 <hr class="section-divider">
 
-<!-- ====================== CTA FOOTER ====================== -->
+<!-- ====================== CTA ====================== -->
 <section class="cta-section" id="cta">
   <div class="container">
     <div class="fade-in">
@@ -1599,16 +1341,15 @@
         of your <span style="color: var(--accent);">digital future</span>.
       </h2>
       <p class="cta-text">
-        Let's make your savoury protein bar brand not only taste good, but work beautifully online. Ready to build something exceptional together.
+        Let's make your savory protein bar brand not only taste good, but work beautifully online. Ready to build something exceptional together.
       </p>
       <a href="mailto:hola@livv.systems" class="cta-email">
-        hola@livv.systems →
+        hola@livv.systems &#8594;
       </a>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="footer-links">
@@ -1619,20 +1360,13 @@
 </footer>
 
 <script>
-  // ===== Page Loader =====
   window.addEventListener('load', () => {
     setTimeout(() => {
       document.getElementById('pageLoader').classList.add('hidden');
     }, 800);
   });
 
-  // ===== Scroll Animations (IntersectionObserver) =====
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -60px 0px',
-    threshold: 0.1
-  };
-
+  const observerOptions = { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0.1 };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1641,10 +1375,8 @@
       }
     });
   }, observerOptions);
-
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // ===== Smooth parallax on hero =====
   const heroGraphic = document.querySelector('.hero-graphic');
   if (heroGraphic) {
     window.addEventListener('scroll', () => {
